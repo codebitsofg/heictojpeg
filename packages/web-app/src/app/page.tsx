@@ -73,7 +73,7 @@ function Home() {
         setConvertedFile(response.data);
         setSelectedFile(undefined);
       } else {
-        setErrorMessage("Conversion failed. Please try again later.");
+        setErrorMessage("Conversion failed. Please try again.");
       }
     } catch (error) {
       setIsLoading(false);
