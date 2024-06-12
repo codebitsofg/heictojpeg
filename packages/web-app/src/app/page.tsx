@@ -60,7 +60,7 @@ function Home() {
 
     try {
       const response: AxiosResponse<Blob> = await axios.post(
-        process.env.API_END_POINT,
+        process.env.API_END_POINT!,
         formData,
         {
           responseType: "blob",
