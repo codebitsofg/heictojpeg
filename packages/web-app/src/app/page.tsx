@@ -60,7 +60,7 @@ function Home() {
 
     try {
       const response: AxiosResponse<Blob> = await axios.post(
-        process.env.API_END_POINT!,
+        "https://multerapiconvert-2x2av6p2ra-ew.a.run.app/", // Hide
         formData,
         {
           responseType: "blob",
@@ -73,7 +73,7 @@ function Home() {
         setConvertedFile(response.data);
         setSelectedFile(undefined);
       } else {
-        setErrorMessage("Conversion failed. Please try again.");
+        setErrorMessage("Conversion failed. Please try again later.");
       }
     } catch (error) {
       setIsLoading(false);
