@@ -60,7 +60,7 @@ function Home() {
 
     try {
       const response: AxiosResponse<Blob> = await axios.post(
-        "https://multerapiconvert-2x2av6p2ra-ew.a.run.app/",
+        process.env.API_END_POINT,
         formData,
         {
           responseType: "blob",
