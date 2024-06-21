@@ -21,9 +21,13 @@ export const FloatingWrap = styled.div`
   border-radius: 12px;
   height: 48%;
   background-color: #ffffff;
-
   width: 19vw;
   box-shadow: 1px 0 10px #24232346;
+
+  @media screen and (max-width: 1000px) {
+    width: 90vw;
+    z-index: 99;
+  }
 `;
 
 export const InnerWrapper = styled.div`
@@ -106,6 +110,10 @@ export const TextContainer = styled.div`
   padding: 6% 0;
   position: relative;
   z-index: 2;
+
+  @media screen and (max-width: 1000px) {
+    display: none;
+  }
 `;
 
 export const Title = styled.p`

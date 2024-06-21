@@ -24,6 +24,7 @@ import {
   Title,
 } from "./appStyles";
 import { json } from "stream/consumers";
+import MobilePage from "../../components/MobilePage/MobilePage";
 
 function Home() {
   const [selectedFile, setSelectedFile] = useState<File | undefined>(undefined);
@@ -94,7 +95,11 @@ function Home() {
                 </Paragraph>
               </SelectedFileContainer>
             )}
-            <FileInput ref={inputRef} onChange={handleFileChange} />
+            <FileInput
+              accept=".heic"
+              ref={inputRef}
+              onChange={handleFileChange}
+            />
 
             {!selectedFile && !convertedFile && (
               <AddContainer>
