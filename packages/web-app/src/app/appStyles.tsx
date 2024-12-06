@@ -1,16 +1,11 @@
 import styled, { keyframes } from "styled-components";
 
 export const Container = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  position: relative;
   display: flex;
   font-family: var(--font-Oswald);
-  padding: 0 5%;
+  justify-content: space-between;
   align-items: center;
-  background-color: #f1f1f1;
   color: black;
   background-size: cover;
   background-position: center center;
@@ -19,15 +14,22 @@ export const Container = styled.div`
 
 export const FloatingWrap = styled.div`
   border-radius: 12px;
-  height: 48%;
-  background-color: #ffffff;
-  width: 19vw;
+  height: 25rem;
+  width: 30rem;
+  background-color: #f1f1f1;
   box-shadow: 1px 0 10px #24232346;
 
   @media screen and (max-width: 1000px) {
     width: 90vw;
     z-index: 99;
   }
+`;
+
+export const Wrapper = styled.div`
+  padding-top: 4rem;
+  max-width: 65rem;
+  width: 100%;
+  margin: 0 auto;
 `;
 
 export const InnerWrapper = styled.div`
@@ -71,7 +73,7 @@ export const AddButton = styled.button`
   padding: 10px;
   border: none;
   border-radius: 50%;
-  background-color: #5268ff;
+  background-color: black;
   color: white;
   font-size: 1.5rem;
   cursor: pointer;
@@ -81,7 +83,7 @@ export const AddButton = styled.button`
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: #45a049;
+    background-color: #5268ff;
   }
 `;
 
@@ -97,18 +99,26 @@ export const ConvertButton = styled.div`
 `;
 
 export const ConverText = styled.span<{ inactive: boolean }>`
-  background-color: ${({ inactive }) => (inactive ? "gray" : "#5268ff")};
+  background-color: ${({ inactive }) => (inactive ? "gray" : "black")};
   padding: 3% 9%;
   border-radius: 30px;
   font-size: 1.1rem;
   font-weight: 200;
   color: #f1f1f1;
+
+  &:hover {
+    background-color: #5268ff;
+  }
 `;
 
 export const TextContainer = styled.div`
   height: 47%;
+  text-align: right;
   padding: 6% 0;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   z-index: 2;
 
   @media screen and (max-width: 1000px) {
@@ -118,9 +128,8 @@ export const TextContainer = styled.div`
 
 export const Title = styled.p`
   font-weight: 600;
-  font-size: 3rem;
-  line-height: 3rem;
-  width: 60%;
+  font-size: 4rem;
+  line-height: 4.3rem;
   color: #191919;
   flex: 1;
   margin-bottom: 3%;
@@ -131,12 +140,13 @@ export const Paragraph = styled.p`
   width: 45%;
   font-size: 1.2rem;
   font-weight: 200;
+  text-align: right;
 `;
 
 export const FrameImage = styled.img.attrs({
   src: "/frame.png",
 })`
-  position: fixed;
+  position: absolute;
   right: 10%;
   top: 50%;
   width: 50%;
@@ -183,7 +193,6 @@ export const Spinner = styled.div`
 `;
 
 export const BrandLogo = styled.h4`
-  position: fixed;
   font-size: 2rem;
   top: 1%;
   color: #3c3744;
