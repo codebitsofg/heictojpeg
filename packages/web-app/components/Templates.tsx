@@ -2,11 +2,15 @@ import styled from "styled-components";
 import Image from "next/image";
 
 const TemplatesContainer = styled.section`
-  padding: 60px 0;
+  padding: 30px 1.5rem;
   max-width: 65rem;
   width: 100%;
   margin: 0 auto;
   text-align: center;
+
+  @media (min-width: 768px) {
+    padding: 100px 0;
+  }
 `;
 
 const TemplatesTitle = styled.h2`
@@ -23,25 +27,38 @@ const TemplatesDescription = styled.p`
 
 const TemplatesGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 80px;
+  grid-template-columns: 1;
+  gap: 50px;
+
+  @media (min-width: 768px) {
+    gap: 80px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
 `;
 
 const TemplateCard = styled.div`
   background-color: #f8f9fa;
   border-radius: 8px;
   overflow: hidden;
-  min-height: 20rem;
+  min-height: 15rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  @media (min-width: 768px) {
+    min-height: 20rem;
+  }
 `;
 
-const TemplateImage = styled(Image)`
-  width: 200px;
+const TemplateImage = styled.img`
+  width: 150px;
   height: auto;
+
+  @media (min-width: 768px) {
+    width: 200px;
+  }
 `;
 
 const TemplateInfo = styled.div`
@@ -95,8 +112,6 @@ export default function Templates() {
             <TemplateImage
               src={template.image}
               alt={template.name}
-              width={100}
-              height={100}
             />
             <TemplateInfo>
               <TemplateTitle>{template.name}</TemplateTitle>

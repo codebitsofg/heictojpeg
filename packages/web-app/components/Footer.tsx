@@ -14,16 +14,31 @@ const FooterContent = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const FooterSection = styled.div`
   margin-bottom: 30px;
+  flex: 1;
+
+  @media (max-width: 768px) {
+    text-align: center;
+    margin-bottom: 20px;
+  }
 `;
 
 const FooterTitle = styled.h3`
   font-size: 18px;
   color: #333;
   margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 15px;
+  }
 `;
 
 const Link = styled.a`
@@ -31,8 +46,13 @@ const Link = styled.a`
   color: #666;
   text-decoration: none;
   margin-bottom: 10px;
+
   &:hover {
     color: #0070f3;
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: 8px;
   }
 `;
 
@@ -40,7 +60,12 @@ const Copyright = styled.p`
   text-align: center;
   color: #666;
   margin-top: 40px;
+
+  @media (max-width: 768px) {
+    margin-top: 20px;
+  }
 `;
+
 
 const Footer = () => {
   return (

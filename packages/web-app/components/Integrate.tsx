@@ -1,31 +1,43 @@
 import styled from "styled-components";
 
 const IntegrationContainer = styled.section`
-  padding: 60px 0;
+  padding: 30px 1.5rem;
   text-align: center;
   max-width: 65rem;
-  width: 100%;
   margin: 0 auto;
+
+  @media (min-width: 768px) {
+    padding: 60px 0;
+  }
 `;
 
+export const OuterWrapper = styled.div`
+  background-color: black;
+`;
 const IntegrationTitle = styled.h2`
   font-size: 36px;
-  color: #333;
+  color: white;
   margin-bottom: 20px;
 `;
 
 const IntegrationDescription = styled.p`
   font-size: 18px;
-  color: #666;
+  color: white;
   margin-bottom: 40px;
 `;
 
 const IntegrationGrid = styled.div`
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 4rem;
-  gap: 30px;
+  gap: 0.5rem;
   align-items: center;
+
+  @media (min-width: 768px) {
+    gap: 30px;
+    flex-wrap: nowrap;
+  }
 `;
 
 const IntegrationLogo = styled.div<{ fontFamily: string; color: string }>`
@@ -59,25 +71,28 @@ const integrations = [
 
 export default function Integration() {
   return (
-    <IntegrationContainer id="integrations">
-      <IntegrationTitle>
-        Integrate & connect with your favorite tools
-      </IntegrationTitle>
-      <IntegrationDescription>
-        Uniform makes it easy to connect your forms seamlessly to your favorite
-        tools. We support integrations with Zapier and over 5,000 other apps.
-      </IntegrationDescription>
-      <IntegrationGrid>
-        {integrations.map((integration) => (
-          <IntegrationLogo
-            key={integration.name}
-            fontFamily={integration.fontFamily}
-            color={integration.color}
-          >
-            {integration.name}
-          </IntegrationLogo>
-        ))}
-      </IntegrationGrid>
-    </IntegrationContainer>
+    <OuterWrapper>
+      <IntegrationContainer id="integrations">
+        <IntegrationTitle>
+          Integrate & connect with your favorite tools
+        </IntegrationTitle>
+        <IntegrationDescription>
+          Uniform makes it easy to connect your forms seamlessly to your
+          favorite tools. We support integrations with Zapier and over 5,000
+          other apps.
+        </IntegrationDescription>
+        <IntegrationGrid>
+          {integrations.map((integration) => (
+            <IntegrationLogo
+              key={integration.name}
+              fontFamily={integration.fontFamily}
+              color={integration.color}
+            >
+              {integration.name}
+            </IntegrationLogo>
+          ))}
+        </IntegrationGrid>
+      </IntegrationContainer>
+    </OuterWrapper>
   );
 }

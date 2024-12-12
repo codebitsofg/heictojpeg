@@ -1,11 +1,15 @@
 import styled from "styled-components";
 
 const SaveTimeContainer = styled.section`
-  padding: 60px 0;
+  padding: 30px 1.5rem;
   text-align: center;
   max-width: 65rem;
   width: 100%;
   margin: 0 auto;
+
+  @media (min-width: 768px) {
+    padding: 100px 0;
+  }
 `;
 
 const SaveTimeTitle = styled.h2`
@@ -16,10 +20,13 @@ const SaveTimeTitle = styled.h2`
 
 const StatsGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1;
   gap: 30px;
   border-radius: 8px;
   padding: 30px;
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 `;
 
 const StatCard = styled.div`

@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const HeroContainer = styled.section`
   display: flex;
+  flex-direction: column;
   padding-top: 70px;
   position: relative;
   z-index: 999999;
@@ -10,6 +11,16 @@ const HeroContainer = styled.section`
   margin: 0 auto;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
+  padding: 0 1.5rem;
+  margin-top: 5rem;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    padding: 0px;
+    text-align: left;
+    align-items: center;
+  }
 `;
 
 const HeroContent = styled.div`
@@ -31,13 +42,31 @@ const HeroDescription = styled.p`
 const FeatureList = styled.ul`
   list-style-type: none;
   padding: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+
+  @media (min-width: 768px) {
+    display: block;
+    padding: 0px;
+    text-align: left;
+    align-items: center;
+  }
 `;
 
 const Image = styled.img.attrs({
   src: "/hero.svg",
 })`
-  width: 500px;
-  height: 500px;
+  width: 250px;
+  height: 250px;
+  margin: 3rem 0;
+
+  @media (min-width: 768px) {
+    width: 500px;
+    height: 500px;
+    margin: 0;
+  }
 `;
 
 const FeatureItem = styled.li`

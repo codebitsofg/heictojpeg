@@ -19,11 +19,17 @@
 html {
   width: 100vw;
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background-color: white;
+  width: 100vw;
+  overflow-x: hidden;
+  margin: 0; 
+  padding: 0; 
 }
 
 @layer utilities {

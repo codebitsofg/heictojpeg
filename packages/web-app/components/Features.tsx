@@ -2,10 +2,14 @@ import styled from "styled-components";
 import { Zap, Sliders, Repeat } from "lucide-react";
 
 const FeaturesContainer = styled.section`
-  padding: 60px 0;
+  padding: 30px 1.5rem;
   max-width: 65rem;
   width: 100%;
   margin: 0 auto;
+
+  @media (min-width: 768px) {
+    padding: 100px 0;
+  }
 `;
 
 const FeaturesGrid = styled.div`
@@ -59,7 +63,7 @@ const Features = () => {
           <FeatureTitle>Customize your forms</FeatureTitle>
           <FeatureDescription>
             Uniform makes it easy to customize your forms to fit your company or
-            client's branding.
+            clients branding.
           </FeatureDescription>
         </FeatureCard>
         <FeatureCard>

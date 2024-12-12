@@ -1,11 +1,17 @@
 import styled from "styled-components";
 import { Clock, Zap, Sliders } from "lucide-react";
+import { OuterWrapper } from "./Integrate";
 
 const BenefitsContainer = styled.section`
-  padding: 80px 0;
+  padding: 40px 1.5rem;
   max-width: 65rem;
   width: 100%;
   margin: 0 auto;
+
+
+  @media (min-width: 768px) {
+    padding: 60px 0;
+  }
 `;
 
 const BenefitsGrid = styled.div`
@@ -29,17 +35,18 @@ const BenefitIcon = styled.div`
 
 const BenefitTitle = styled.h3`
   font-size: 20px;
-  color: #333;
+  color: white;
   margin-bottom: 10px;
 `;
 
 const BenefitDescription = styled.p`
   font-size: 16px;
-  color: #666;
+  color: white;
 `;
 
 const Benefits = () => {
   return (
+    <OuterWrapper>
     <BenefitsContainer>
       <BenefitsGrid>
         <BenefitCard>
@@ -74,6 +81,7 @@ const Benefits = () => {
         </BenefitCard>
       </BenefitsGrid>
     </BenefitsContainer>
+    </OuterWrapper>
   );
 };
 
